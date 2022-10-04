@@ -6,7 +6,11 @@ steps:
   - name: maven:3-jdk-8
     entrypoint: mvn
     args: ['dependency:tree'] 
-    
+  
+  - name: maven:3-jdk-8
+    entrypoint: mvn
+    args: ['clean package'] 
+
   - name: 'gcr.io/cloud-builders/docker'
     args:
       [
