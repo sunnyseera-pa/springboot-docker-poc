@@ -3,8 +3,9 @@ steps:
     entrypoint: 'bash'
     args: ['-c', 'docker pull gcr.io/$PROJECT_ID/${_APP_NAME}:${_ENVIRONMENT} || exit 0']
 
-  - name: 'gcr.io/cloud-builders/mvn'
-    args: ['dockerfile:build']
+  - name: maven:3-jdk-8
+    entrypoint: mvn
+    args: ['clean package'] 
     
   - name: 'gcr.io/cloud-builders/docker'
     args:
