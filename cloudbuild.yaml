@@ -21,6 +21,23 @@ steps:
         'gcr.io/$PROJECT_ID/${_APP_NAME}:${_ENVIRONMENT}',
         '.',
       ]
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      [
+        'run',
+        'deploy',
+        '${_APP_NAME}:${_ENVIRONMENT}',
+        '--image',
+        'gcr.io/$PROJECT_ID/${_APP_NAME}:${_ENVIRONMENT}',
+        '--platform',
+        'managed',
+        '--region',
+        '${_REGION}',
+        '--allow-unauthenticated',
+      ]
+images:
+  - gcr.io/$PROJECT_ID/${_APP_NAME}:{_ENVIRONMENT}
 timeout: 1200s
 options:
   machineType: 'E2_HIGHCPU_8'
