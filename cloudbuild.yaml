@@ -27,7 +27,7 @@ steps:
       [
         'run',
         'deploy',
-        '${_APP_NAME}:${_ENVIRONMENT}',
+        '${_APP_NAME}-${_ENVIRONMENT}',
         '--image',
         'gcr.io/$PROJECT_ID/${_APP_NAME}:${_ENVIRONMENT}',
         '--platform',
