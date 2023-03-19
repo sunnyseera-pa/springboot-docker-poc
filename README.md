@@ -24,4 +24,4 @@
  - docker build -t springboot:latest .
 
 # Run Docker Image 
-- docker run --name springbootapp -p 8080:8080 springboot    fdf
+- docker run --name springbootapp -p 8080:8080 springboot
